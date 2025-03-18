@@ -16,7 +16,7 @@ public class FollowSO : NodeSO
                 {
                     if (hit.transform.CompareTag("Player"))
                     {
-                        enemy.ChaseTarget(enemy.player.transform, enemy.transform);
+                        enemy.Chase(enemy.player.transform, enemy.transform);
                         return true;
                     }
                 }

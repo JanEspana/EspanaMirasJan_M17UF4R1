@@ -7,7 +7,7 @@ public class PatrolStateSO : NodeSO
 {
     public override bool Execute(Enemy enemy)
     {
-        enemy.ChaseNodes();
+        enemy.Patrol();
         return true;
     }
 }

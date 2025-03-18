@@ -18,7 +18,7 @@ public class EscapeSO : NodeSO
                     //mira si el jugador esta cerca y si no hay obstaculos entre el enemigo y el jugador
                     if (hit.transform.CompareTag("Player"))
                     {
-                        enemy.RunAway(hit.transform);
+                        enemy.Escape(hit.transform);
                         return true;
                     }
                 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2145a9f2757fd41ad807c0f4d167af, type: 3}
   m_Name: PatrolSO
   m_EditorClassIdentifier: 
-  priority: 2
+  priority: 4
