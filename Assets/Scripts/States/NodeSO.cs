@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NodeSO", menuName = "NodesSO/FollowSO", order = 1)]
 public abstract class NodeSO : ScriptableObject
 {
+    public int priority;
     public abstract bool Execute(Enemy enemy);
 }

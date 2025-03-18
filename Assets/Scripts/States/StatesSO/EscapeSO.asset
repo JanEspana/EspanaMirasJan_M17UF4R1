@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30e6e3a52161134684083f26e607b43, type: 3}
-  m_Name: FollowSO
+  m_Script: {fileID: 11500000, guid: 0d92392e320dc5e4a8d3c1a2c8193126, type: 3}
+  m_Name: EscapeSO
   m_EditorClassIdentifier: 
   priority: 1

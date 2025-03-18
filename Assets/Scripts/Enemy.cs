@@ -10,12 +10,13 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     internal float distance = 10;
     bool currentNode = false;
-    public float speed;
+    public float speed, HP, maxHP = 10;
     public List<GameObject> nodes;
     public BehaviourTree behaviourTree;
 
     void Awake()
     {
+        HP = maxHP;
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     }
     public void ChaseTarget(Transform target, Transform self)
     {
+        Debug.Log("Voy por ti joputa");
         agent.speed = speed;
         agent.SetDestination(target.position);
     }
@@ -39,5 +41,12 @@ public class Enemy : MonoBehaviour
             currentNode = !currentNode;
             agent.SetDestination(currentNode ? nodes[1].transform.position : nodes[0].transform.position);
         }
+    }
+
+    public void RunAway(Transform target)
+    {
+        Debug.Log("Ayuda Diosito");
+        agent.speed = speed;
+        agent.SetDestination(transform.position + (transform.position - target.position));
     }
 }
