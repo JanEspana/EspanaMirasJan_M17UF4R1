@@ -10,9 +10,10 @@ public class Enemy : MonoBehaviour
     internal NavMeshAgent agent;
     internal float distance = 10;
     bool currentNode = false;
-    public float speed, HP, maxHP = 10;
+    public float speed, maxHP = 10;
     public List<GameObject> nodes;
     public BehaviourTree behaviourTree;
+    public float HP { get; set; }
 
     void Awake()
     {
