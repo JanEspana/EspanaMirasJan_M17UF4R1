@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamage
     public GameObject player;
     Rigidbody rb;
     internal NavMeshAgent agent;
-    internal float distance = 10;
+    internal float distance = 10, cooldown = 0;
     bool currentNode = false;
     public float speed, maxHP = 10;
     public List<GameObject> nodes;
@@ -25,6 +25,10 @@ public class Enemy : MonoBehaviour, IDamage
     private void Update()
     {
         behaviourTree.Execute(this);
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
     }
     public void Chase(Transform target, Transform self)
     {
@@ -68,6 +72,14 @@ public class Enemy : MonoBehaviour, IDamage
         if (HP <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && cooldown <= 0)
+        {
+            collision.gameObject.GetComponent<IDamage>().TakeDamage(2);
+            cooldown = 2;
         }
     }
 }
