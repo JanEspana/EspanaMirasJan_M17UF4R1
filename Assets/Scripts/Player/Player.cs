@@ -10,11 +10,12 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     public float speed = 7.5f;
     private InputController ic;
     public GameObject weapon, bulletPrefab;
-    Stack<GameObject> bullets;
+    public Stack<GameObject> bullets;
     public float HP { get; set; }
 
     private void Awake()
     {
+        instance = this;
         HP = 10;
         rb = GetComponent<Rigidbody>();
         ic = new InputController();
@@ -47,16 +48,14 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     {
         if (context.performed)
         {
-            GameObject bullet;
-            if (bullets.Count > 0)
+            if (bullets.Count != 0)
             {
-                bullet = Pop();
+                Pop();
             }
             else
             {
-                bullet = Instantiate(bulletPrefab, weapon.transform.position, weapon.transform.rotation);
+                Instantiate(bulletPrefab, weapon.transform.position, weapon.transform.rotation);
             }
-            bullet.GetComponent<Rigidbody>().AddForce(weapon.transform.forward * 1000);
         }
     }
     public void Push(GameObject obj)
@@ -68,8 +67,8 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     {
         GameObject obj = bullets.Pop();
         obj.SetActive(true);
+        Debug.Log(obj);
         obj.transform.position = weapon.transform.position;
-        obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
         return obj;
     }
     public GameObject Peek()

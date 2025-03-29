@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamage
 {
     public GameObject player;
     Rigidbody rb;
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
     public void Escape(Transform target)
     {
         Debug.Log("Ayuda Diosito");
-        agent.speed = speed;
+        agent.speed = speed * 1.25f;
         agent.SetDestination(transform.position + (transform.position - target.position));
     }
     public void ConfusedPatrol()
@@ -61,5 +61,13 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         agent.SetDestination(transform.position + new Vector3(Random.Range(0, 2) == 0 ? -3 : 3, 0, Random.Range(0, 2) == 0 ? -3 : 3));
+    }
+    public void TakeDamage(float dmg)
+    {
+        HP -= dmg;
+        if (HP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody rb;
-    float lifeTime = 1;
+    float lifeTime;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,7 +15,13 @@ public class Bullet : MonoBehaviour
     {
         EndOfLifeTime();
     }
-
+    private void OnEnable()
+    {
+        lifeTime = 1;
+        rb.velocity = Vector3.zero;
+        transform.rotation = Player.instance.weapon.transform.rotation;
+        rb.velocity = transform.forward * 50;
+    }
     void EndOfLifeTime()
     {
         if (lifeTime <= 0)
@@ -31,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<IDamage>().TakeDamage(5);
+            collision.gameObject.GetComponent<IDamage>().TakeDamage(6);
             Player.instance.Push(gameObject);
         }
     }
