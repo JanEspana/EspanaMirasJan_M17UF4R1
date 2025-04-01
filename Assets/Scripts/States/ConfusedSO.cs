@@ -7,7 +7,7 @@ public class ConfusedSO : NodeSO
 {
     public override bool Execute(Enemy enemy)
     {
-        if (enemy.HP < enemy.maxHP / 2)
+        if (enemy.HP < enemy.maxHP)
         {
             enemy.ConfusedPatrol();
             return true;
