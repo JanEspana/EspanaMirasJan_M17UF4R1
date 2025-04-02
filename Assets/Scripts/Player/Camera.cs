@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,8 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     public List<GameObject> cameras = new List<GameObject>();
     private InputController ic;
     int activeCam;
+
+    public GameObject head;
     void Awake()
     {
         ic = new InputController();
@@ -48,11 +51,15 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
             switch (activeCam)
             {
                 case 0:
+                    head.gameObject.SetActive(true);
+
                     cameras[1].SetActive(true);
                     cameras[0].SetActive(false);
                     activeCam = 1;
                     break;
                 case 1:
+                    head.gameObject.SetActive(true);
+
                     cameras[2].SetActive(true);
                     cameras[1].SetActive(false);
                     activeCam = 2;
@@ -61,6 +68,7 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
                     cameras[0].SetActive(true);
                     cameras[2].SetActive(false);
                     activeCam = 0;
+                    head.gameObject.SetActive(false);
                     break;
             }
         }

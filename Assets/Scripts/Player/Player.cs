@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamage
 {
     public static Player instance;
-    Rigidbody rb;
+    internal Rigidbody rb;
     public float speed = 7.5f;
     private InputController ic;
     public GameObject weapon, bulletPrefab;
     public Stack<GameObject> bullets;
+
     public float HP { get; set; }
 
     private void Awake()
@@ -34,15 +35,6 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     {
         Move();
     }
-    void Move()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
-    }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
@@ -57,6 +49,26 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
                 Instantiate(bulletPrefab, weapon.transform.position, weapon.transform.rotation);
             }
         }
+    }
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            speed = 12;
+        }
+        if (context.canceled)
+        {
+            speed = 7.5f;
+        }
+    }
+    public void Move()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
     }
     public void Push(GameObject obj)
     {
