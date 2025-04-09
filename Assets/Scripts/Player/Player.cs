@@ -11,6 +11,8 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     private InputController ic;
     public GameObject weapon, bulletPrefab;
     public Stack<GameObject> bullets;
+    
+    public bool isGrounded;
 
     public float HP { get; set; }
 
@@ -96,4 +98,21 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
             Application.Quit();
         }
     }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded)
+        {
+            rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
 }

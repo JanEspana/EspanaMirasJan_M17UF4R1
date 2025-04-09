@@ -6,22 +6,23 @@ using UnityEngine.InputSystem;
 
 public class Camera : MonoBehaviour, InputController.ICameraInputActions
 {
+    public static Camera instance;
     float mouseSensibility = 2f;
     public Transform player;
     public List<GameObject> cameras = new List<GameObject>();
     private InputController ic;
-    int activeCam;
+    public int activeCam;
 
     public GameObject head;
+    bool headActive = true;
     void Awake()
     {
         ic = new InputController();
         ic.CameraInput.SetCallbacks(this);
 
         Cursor.lockState = CursorLockMode.Locked;
-        activeCam = 0;
-        cameras[0].SetActive(true);
-        cameras[1].SetActive(false);
+        cameras[0].SetActive(false);
+        cameras[1].SetActive(true);
         cameras[2].SetActive(false);
     }
     void OnEnable()
@@ -43,7 +44,6 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
             player.Rotate(Vector3.up * mouseX);
         }
     }
-
     public void OnChangeCamera(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -51,26 +51,30 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
             switch (activeCam)
             {
                 case 0:
-                    head.gameObject.SetActive(true);
-
                     cameras[1].SetActive(true);
                     cameras[0].SetActive(false);
                     activeCam = 1;
+                    head.SetActive(true);
                     break;
                 case 1:
-                    head.gameObject.SetActive(true);
-
                     cameras[2].SetActive(true);
                     cameras[1].SetActive(false);
                     activeCam = 2;
+                    head.SetActive(true);
                     break;
                 case 2:
                     cameras[0].SetActive(true);
                     cameras[2].SetActive(false);
                     activeCam = 0;
-                    head.gameObject.SetActive(false);
+                    StartCoroutine(HeadOff());
                     break;
             }
         }
+    }
+    IEnumerator HeadOff()
+    {
+        yield return new WaitForSeconds(1);
+        head.SetActive(false);
+        headActive = false;
     }
 }
