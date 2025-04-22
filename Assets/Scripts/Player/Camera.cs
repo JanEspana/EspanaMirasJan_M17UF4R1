@@ -11,7 +11,7 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     public Transform player;
     public List<GameObject> cameras = new List<GameObject>();
     private InputController ic;
-    public int activeCam;
+    public bool activeCam = true;
 
     public GameObject head;
     bool headActive = true;
@@ -23,7 +23,6 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
         Cursor.lockState = CursorLockMode.Locked;
         cameras[0].SetActive(false);
         cameras[1].SetActive(true);
-        cameras[2].SetActive(false);
     }
     void OnEnable()
     {
@@ -46,28 +45,22 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     }
     public void OnChangeCamera(InputAction.CallbackContext context)
     {
+        //there are 2 cams, 3rd and 1st person.
         if (context.performed)
         {
-            switch (activeCam)
+            activeCam = !activeCam;
+            if (!activeCam)
             {
-                case 0:
-                    cameras[1].SetActive(true);
-                    cameras[0].SetActive(false);
-                    activeCam = 1;
-                    head.SetActive(true);
-                    break;
-                case 1:
-                    cameras[2].SetActive(true);
-                    cameras[1].SetActive(false);
-                    activeCam = 2;
-                    head.SetActive(true);
-                    break;
-                case 2:
-                    cameras[0].SetActive(true);
-                    cameras[2].SetActive(false);
-                    activeCam = 0;
-                    StartCoroutine(HeadOff());
-                    break;
+                cameras[0].SetActive(true);
+                cameras[1].SetActive(false);
+                StartCoroutine(HeadOff());
+            }
+            else
+            {
+                cameras[0].SetActive(false);
+                cameras[1].SetActive(true);
+                head.SetActive(true);
+                headActive = true;
             }
         }
     }

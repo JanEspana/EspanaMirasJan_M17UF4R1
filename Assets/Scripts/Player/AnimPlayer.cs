@@ -6,15 +6,17 @@ public class AnimPlayer : MonoBehaviour
 {
     public Player player;
     public Animator anim;
+    public GameObject pokeball;
     void Awake()
     {
         player = GetComponent<Player>();
+        pokeball.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.rb.velocity.y > 0 && !player.isGrounded)
+        if (!player.canJump)
         {
             anim.SetBool("isJumping", true);
         }
