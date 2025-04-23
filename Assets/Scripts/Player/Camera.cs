@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Camera : MonoBehaviour, InputController.ICameraInputActions
 {
@@ -12,15 +13,14 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     public List<GameObject> cameras = new List<GameObject>();
     private InputController ic;
     public bool activeCam = true;
-
-    public GameObject head;
-    bool headActive = true;
+    public bool aiming;
     void Awake()
     {
+        instance = this;
         ic = new InputController();
         ic.CameraInput.SetCallbacks(this);
 
-        Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         cameras[0].SetActive(false);
         cameras[1].SetActive(true);
     }
@@ -36,7 +36,7 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     // Update is called once per frame
     void Update()
     {
-        if (Cursor.lockState == CursorLockMode.Locked)
+        if (UnityEngine.Cursor.lockState == CursorLockMode.Locked)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensibility;
 
@@ -45,29 +45,17 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     }
     public void OnChangeCamera(InputAction.CallbackContext context)
     {
-        //there are 2 cams, 3rd and 1st person.
         if (context.performed)
         {
-            activeCam = !activeCam;
-            if (!activeCam)
-            {
-                cameras[0].SetActive(true);
-                cameras[1].SetActive(false);
-                StartCoroutine(HeadOff());
-            }
-            else
-            {
-                cameras[0].SetActive(false);
-                cameras[1].SetActive(true);
-                head.SetActive(true);
-                headActive = true;
-            }
+            cameras[0].SetActive(true);
+            cameras[1].SetActive(false);
+            aiming = true;
         }
-    }
-    IEnumerator HeadOff()
-    {
-        yield return new WaitForSeconds(1);
-        head.SetActive(false);
-        headActive = false;
+        else if (context.canceled)
+        {
+            cameras[0].SetActive(false);
+            cameras[1].SetActive(true);
+            aiming = false;
+        }
     }
 }

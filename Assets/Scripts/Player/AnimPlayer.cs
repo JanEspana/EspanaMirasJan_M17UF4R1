@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class AnimPlayer : MonoBehaviour
 {
+    public static AnimPlayer instance;
     public Player player;
     public Animator anim;
     public GameObject pokeball;
     void Awake()
     {
+        instance = this;
         player = GetComponent<Player>();
         pokeball.SetActive(false);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -44,5 +45,17 @@ public class AnimPlayer : MonoBehaviour
                 anim.SetBool("isRunning", false);
             }
         }
+
+        if (!Camera.instance.aiming && anim.GetBool("isAiming"))
+        {
+            anim.SetLayerWeight(1, 1);
+            StartCoroutine(DisableLayer());
+        }
+    }
+    IEnumerator DisableLayer()
+    {
+        float length = anim.GetCurrentAnimatorStateInfo(1).length;
+        yield return new WaitForSeconds(length);
+        anim.SetLayerWeight(1, 0);
     }
 }

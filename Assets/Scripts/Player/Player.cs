@@ -11,7 +11,7 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     private InputController ic;
     public GameObject weapon, bulletPrefab;
     public Stack<GameObject> bullets;
-    
+    public float bulletCooldown = 0;
     public bool isGrounded, canJump;
 
     public float HP { get; set; }
@@ -36,12 +36,17 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     private void Update()
     {
         Move();
+        if (bulletCooldown > 0)
+        {
+            bulletCooldown -= Time.deltaTime;
+        }
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && bulletCooldown <= 0)
         {
+            bulletCooldown = 1;
             if (bullets.Count != 0)
             {
                 Pop();

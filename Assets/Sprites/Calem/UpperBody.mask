@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Camera
+    m_Weight: 1
+  - m_Path: Light
+    m_Weight: 1
+  - m_Path: mixamorig:Hips
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot/mixamorig:LeftToeBase
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:LeftUpLeg/mixamorig:LeftLeg/mixamorig:LeftFoot/mixamorig:LeftToeBase/mixamorig:LeftToe_End
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot/mixamorig:RightToeBase
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:RightUpLeg/mixamorig:RightLeg/mixamorig:RightFoot/mixamorig:RightToeBase/mixamorig:RightToe_End
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2/mixamorig:LeftHandIndex3
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandIndex1/mixamorig:LeftHandIndex2/mixamorig:LeftHandIndex3/mixamorig:LeftHandIndex4
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2/mixamorig:LeftHandThumb3
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/mixamorig:LeftHandThumb1/mixamorig:LeftHandThumb2/mixamorig:LeftHandThumb3/mixamorig:LeftHandThumb4
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/mixamorig:HeadTop_End
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2/mixamorig:RightHandIndex3
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandIndex1/mixamorig:RightHandIndex2/mixamorig:RightHandIndex3/mixamorig:RightHandIndex4
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2/mixamorig:RightHandThumb3
+    m_Weight: 1
+  - m_Path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/mixamorig:RightHandThumb1/mixamorig:RightHandThumb2/mixamorig:RightHandThumb3/mixamorig:RightHandThumb4
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_LThigh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_LThigh/node_LLeg
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_LThigh/node_LLeg/node_LFoot
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_LThigh/node_LLeg/node_LFoot/node_LToe
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_RThigh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_RThigh/node_RLeg
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_RThigh/node_RLeg/node_RFoot
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Hips/node_RThigh/node_RLeg/node_RFoot/node_RToe
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA/node_LForeArm
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA/node_LForeArm/node_LHand
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA/node_LForeArm/node_LHand/node_LFingerA1
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA/node_LForeArm/node_LHand/node_LFingerB1
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_LShoulder/node_LArmA/node_LForeArm/node_LHandEX
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_Neck
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_Neck/node_Head
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_Neck/node_Head/node_loc_eye
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_Neck/node_Head/node_loc_head
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_Neck/node_Head/node_loc_mouth
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_BagA
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_BagA/node_BagB
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_BagA/node_BagB/node_BagC
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA/node_RForeArm
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA/node_RForeArm/node_RHand
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA/node_RForeArm/node_RHand/node_RFingerA1
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA/node_RForeArm/node_RHand/node_RFingerB1
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_Origin/node_Waist/node_Spine1/node_Spine2/node_RShoulder/node_RArmA/node_RForeArm/node_RHandEX
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_Armature/node_tr0161_00_fi/node_sw_parts01
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_0_bag
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_0_bag/node_mesh_0_bag_005_mesh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_0_bag/node_mesh_0_bag_005_mesh/node_mesh_0_bag_005_mesh_mesh0
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_1_face
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_1_face/node_mesh_1_face_019_mesh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_1_face/node_mesh_1_face_019_mesh/node_mesh_1_face_019_mesh_mesh0
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_2_hair
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_2_hair/node_mesh_2_hair_004_mesh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_2_hair/node_mesh_2_hair_004_mesh/node_mesh_2_hair_004_mesh_mesh0
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_3_sw_parts01
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_3_sw_parts01/node_mesh_3_sw_parts01_mesh
+    m_Weight: 1
+  - m_Path: node_fb3b6589_e033_4df0_941d_63b59c038b53/node_mesh_3_sw_parts01/node_mesh_3_sw_parts01_mesh/node_mesh_3_sw_parts01_mesh_mesh0
+    m_Weight: 1
