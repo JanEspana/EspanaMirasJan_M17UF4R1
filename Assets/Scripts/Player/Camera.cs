@@ -14,6 +14,7 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     private InputController ic;
     public bool activeCam = true;
     public bool aiming;
+    public GameObject target;
     void Awake()
     {
         instance = this;
@@ -42,6 +43,9 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
 
             player.Rotate(Vector3.up * mouseX);
         }
+
+        target.SetActive(aiming);
+
     }
     public void OnChangeCamera(InputAction.CallbackContext context)
     {
@@ -53,9 +57,9 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
         }
         else if (context.canceled)
         {
+            aiming = false;
             cameras[0].SetActive(false);
             cameras[1].SetActive(true);
-            aiming = false;
         }
     }
 }

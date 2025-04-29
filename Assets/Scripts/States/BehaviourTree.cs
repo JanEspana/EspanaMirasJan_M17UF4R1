@@ -8,6 +8,7 @@ public class BehaviourTree : NodeSO
 {
     public List<NodeSO> nodes = new List<NodeSO>();
     public NodeSO root;
+    public NodeSO actualNode;
 
     public override bool Execute(Enemy enemy)
     {
@@ -16,6 +17,7 @@ public class BehaviourTree : NodeSO
         {
             if (nodes[i].Execute(enemy))
             {
+                actualNode = nodes[i];
                 return true;
             }
         }

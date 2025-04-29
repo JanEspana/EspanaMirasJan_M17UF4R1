@@ -12,7 +12,7 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     public GameObject weapon, bulletPrefab;
     public Stack<GameObject> bullets;
     public float bulletCooldown = 0;
-    public bool isGrounded, canJump;
+    public bool isGrounded, canJump, shooting;
 
     public float HP { get; set; }
 
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     {
         if (context.performed && bulletCooldown <= 0)
         {
+            shooting = true;
             bulletCooldown = 1;
             if (bullets.Count != 0)
             {
@@ -127,5 +128,14 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
         rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         speed *= 3;
         isGrounded = false;
+    }
+
+    void QuitInputs()
+    {
+        ic = null;
+    }
+    void ReturnInputs()
+    {
+        ic = new InputController();
     }
 }

@@ -44,18 +44,40 @@ public class AnimPlayer : MonoBehaviour
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isRunning", false);
             }
+            if (Camera.instance.aiming)
+            {
+                anim.SetLayerWeight(1, 1);
+                if (player.shooting)
+                {
+                    player.shooting = false;
+                    anim.SetTrigger("Throw");
+                    StartCoroutine(DisableLayer());
+                }
+            }
+            else
+            {
+                if (player.shooting)
+                {
+                    anim.SetLayerWeight(1, 1);
+                    player.shooting = false;
+                    anim.SetTrigger("Throw");
+                    StartCoroutine(DisableLayer());
+                }
+                else
+                {
+                    anim.SetLayerWeight(1, 0);
+                }
+            }
         }
 
-        if (!Camera.instance.aiming && anim.GetBool("isAiming"))
+        if (player.HP <= 0)
         {
-            anim.SetLayerWeight(1, 1);
-            StartCoroutine(DisableLayer());
+            anim.SetTrigger("Die");
         }
     }
     IEnumerator DisableLayer()
     {
-        float length = anim.GetCurrentAnimatorStateInfo(1).length;
-        yield return new WaitForSeconds(length);
+        yield return new WaitForSeconds(1);
         anim.SetLayerWeight(1, 0);
     }
 }

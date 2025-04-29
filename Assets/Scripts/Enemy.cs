@@ -6,13 +6,17 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour, IDamage
 {
     public GameObject player;
-    Rigidbody rb;
+    internal Rigidbody rb;
     internal NavMeshAgent agent;
     internal float distance = 10, cooldown = 0;
     bool currentNode = false;
     public float speed, maxHP = 10;
     public List<GameObject> nodes;
     public BehaviourTree behaviourTree;
+
+    bool beStatic = false;
+
+    bool isInRange;
     public float HP { get; set; }
 
     void Awake()
@@ -28,6 +32,20 @@ public class Enemy : MonoBehaviour, IDamage
         if (cooldown > 0)
         {
             cooldown -= Time.deltaTime;
+        }
+
+        if (player.GetComponent<Player>().HP <= 0)
+        {
+            beStatic = true;
+        }
+
+        if (beStatic)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = 5;
         }
     }
     public void Chase(Transform target, Transform self)
@@ -78,8 +96,17 @@ public class Enemy : MonoBehaviour, IDamage
     {
         if (collision.gameObject.CompareTag("Player") && cooldown <= 0)
         {
-            collision.gameObject.GetComponent<IDamage>().TakeDamage(2);
-            cooldown = 2;
+            beStatic = true;
+            StartCoroutine(Hit(collision));
         }
+    }
+    IEnumerator Hit(Collision collision)
+    {
+        yield return new WaitForSeconds(0.75f);
+        if (Vector2.Distance(transform.position, collision.transform.position) <= 2f)
+        {
+            collision.gameObject.GetComponent<IDamage>().TakeDamage(2);
+        }
+        beStatic = false;
     }
 }
