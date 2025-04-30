@@ -74,10 +74,24 @@ public class AnimPlayer : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+
+        if (player.dance)
+        {
+            anim.SetBool("isDancing", true);
+            StartCoroutine(ReturnMove());
+        }
     }
     IEnumerator DisableLayer()
     {
         yield return new WaitForSeconds(1);
         anim.SetLayerWeight(1, 0);
+    }
+    IEnumerator ReturnMove()
+    {
+        yield return new WaitForSeconds(15.2f);
+        player.dance = false;
+        anim.SetBool("isDancing", false);
+        player.enabled = true;
+        Camera.instance.enabled = true;
     }
 }

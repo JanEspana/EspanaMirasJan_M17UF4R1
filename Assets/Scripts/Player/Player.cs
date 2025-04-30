@@ -12,14 +12,14 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     public GameObject weapon, bulletPrefab;
     public Stack<GameObject> bullets;
     public float bulletCooldown = 0;
-    public bool isGrounded, canJump, shooting;
+    public bool isGrounded, canJump, shooting, canMove, dance;
 
     public float HP { get; set; }
 
     private void Awake()
     {
         instance = this;
-        HP = 10;
+        HP = 1;
         rb = GetComponent<Rigidbody>();
         ic = new InputController();
         ic.PlayerInput.SetCallbacks(this);
@@ -40,11 +40,12 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
         {
             bulletCooldown -= Time.deltaTime;
         }
+
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed && bulletCooldown <= 0)
+        if (context.performed && bulletCooldown <= 0 && Camera.instance.aiming)
         {
             shooting = true;
             bulletCooldown = 1;
@@ -62,11 +63,11 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
     {
         if (context.performed)
         {
-            speed = 12;
+            speed *= 2;
         }
         if (context.canceled)
         {
-            speed = 7.5f;
+            speed /= 2;
         }
     }
     public void Move()
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
         HP -= dmg;
         if (HP <= 0)
         {
-            Application.Quit();
+            enabled = false;
         }
     }
 
@@ -112,6 +113,7 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
             speed /= 3;
             canJump = false;
             StartCoroutine(Jump());
+            Debug.Log("A");
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -130,12 +132,12 @@ public class Player : MonoBehaviour, InputController.IPlayerInputActions, IDamag
         isGrounded = false;
     }
 
-    void QuitInputs()
+    public void OnDance(InputAction.CallbackContext context)
     {
-        ic = null;
-    }
-    void ReturnInputs()
-    {
-        ic = new InputController();
+        rb.velocity = Vector3.zero;
+        dance = true;
+        Camera.instance.enabled = false;
+        canMove = false;
+        enabled = false;
     }
 }

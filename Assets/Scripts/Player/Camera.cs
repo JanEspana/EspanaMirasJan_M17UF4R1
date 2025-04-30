@@ -28,6 +28,9 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
     void OnEnable()
     {
         ic.CameraInput.Enable();
+        cameras[0].SetActive(false);
+        cameras[1].SetActive(true);
+        cameras[2].SetActive(false);
     }
     void OnDisable()
     {
@@ -43,7 +46,11 @@ public class Camera : MonoBehaviour, InputController.ICameraInputActions
 
             player.Rotate(Vector3.up * mouseX);
         }
-
+        if (player.gameObject.GetComponent<Player>().HP <= 0)
+        {
+            UnityEngine.Cursor.lockState -= CursorLockMode.Locked;
+            enabled = false;
+        }
         target.SetActive(aiming);
 
     }
